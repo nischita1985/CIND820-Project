@@ -1,0 +1,40 @@
+import pandas as pds
+  
+# reading the XLSX file
+file = ('Covid Data.csv')
+  
+covidData = pds.read_csv(file)
+  
+# displaying the contents of the XLSX file
+covidData.head()
+
+import pandas as pds
+file = ('/Covid 19 Dataset.csv')
+  
+covidData = pds.read_csv(file)
+covidData.head()
+
+
+
+!pip install https://github.com/ydataai/ydata-profiling/archive/master.zip
+
+
+import pandas as pds
+import numpy as np
+#import pandas as pd
+from pandas_profiling import ProfileReport
+
+
+file = ('Covid Data.csv')
+  
+covidData = pds.read_csv(file)
+  
+# displaying the contents of the XLSX file
+covidData.head()
+
+
+df = pds.DataFrame(covidData)
+profile = ProfileReport(df, title="Pandas Profiling Report", html={'style':{'full_width':True}})
+
+
+profile.to_notebook_iframe()
